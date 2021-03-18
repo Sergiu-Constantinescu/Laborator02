@@ -62,7 +62,47 @@ public class LifecycleMonitorActivity extends AppCompatActivity {
         Button cancelButton = (Button) findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(buttonClickListener);
 
-        Log.d(Constants.TAG, "onCreate() method was invoked without a previous state");
+        Log.d("activitylifecyclemonitor", "onCreate() method was invoked WITHOUT a previous state");
+
+        if (savedInstanceState != null) {
+            Log.d("activitylifecyclemonitor", "onCreate() method was invoked WITH a previous state");
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("activitylifecyclemonitor", "onRestart() method was invoked.");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("activitylifecyclemonitor", "onStart() method was invoked.");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("activitylifecyclemonitor", "onResume() method was invoked.");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("activitylifecyclemonitor", "onPause() method was invoked.");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("activitylifecyclemonitor", "onStop() method was invoked.");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("activitylifecyclemonitor", "onDestroy() method was invoked.");
     }
 
 }
